@@ -197,6 +197,34 @@
 ---
 
     Code
+      dplyr::duckplyr_slice_head(df, 5)
+    Condition
+      Error:
+      ! 'duckplyr_slice_head' is not an exported object from 'namespace:dplyr'
+    Code
+      dplyr::duckplyr_slice_tail(df, 5)
+    Condition
+      Error:
+      ! 'duckplyr_slice_tail' is not an exported object from 'namespace:dplyr'
+    Code
+      dplyr::duckplyr_slice_min(df, x, 5)
+    Condition
+      Error:
+      ! 'duckplyr_slice_min' is not an exported object from 'namespace:dplyr'
+    Code
+      dplyr::duckplyr_slice_max(df, x, 5)
+    Condition
+      Error:
+      ! 'duckplyr_slice_max' is not an exported object from 'namespace:dplyr'
+    Code
+      dplyr::duckplyr_slice_sample(df, 5)
+    Condition
+      Error:
+      ! 'duckplyr_slice_sample' is not an exported object from 'namespace:dplyr'
+
+---
+
+    Code
       duckplyr_slice_head(df, 5, 2)
     Condition
       Error in `slice_head()`:

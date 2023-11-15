@@ -337,14 +337,23 @@ test_that("slice_*() doesn't look for `n` in data (#6089)", {
 test_that("slice_*() checks that `n=` is explicitly named and ... is empty", {
   skip_if(Sys.getenv("DUCKPLYR_FORCE") == "TRUE")
   # i.e. that every function calls check_slice_dots()
-
   df <- data.frame(x = 1:10)
+
   expect_snapshot(error = TRUE, {
     duckplyr_slice_head(df, 5)
     duckplyr_slice_tail(df, 5)
     duckplyr_slice_min(df, x, 5)
     duckplyr_slice_max(df, x, 5)
     duckplyr_slice_sample(df, 5)
+  })
+
+  # And works with namespace prefix (#6946)
+  expect_snapshot(error = TRUE, {
+    dplyr::duckplyr_slice_head(df, 5)
+    dplyr::duckplyr_slice_tail(df, 5)
+    dplyr::duckplyr_slice_min(df, x, 5)
+    dplyr::duckplyr_slice_max(df, x, 5)
+    dplyr::duckplyr_slice_sample(df, 5)
   })
 
   expect_snapshot(error = TRUE, {
