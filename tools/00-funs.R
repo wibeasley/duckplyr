@@ -29,6 +29,7 @@ df_methods <-
     "collapse", "tally",
     "sample_n", "sample_frac",
     "slice_min", "slice_max",
+    "dplyr_reconstruct",
     "tbl_vars",
     NULL
   )) %>%
